@@ -2,7 +2,7 @@
 
 This is a simple sinatra app to be used to work with css-get, a command line application that will make it dirt simple to add css files to your application!
 
-    css-get install jquery
+    css-get install 960
     
 This command will install 960.css into you public/stylesheets folder.
 
