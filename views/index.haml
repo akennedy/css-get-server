@@ -1,0 +1,12 @@
+%h1 CSSGet Server
+
+%p
+  Welcome to the CSSGet Server, this server contains an index of css libraries, you can click on any link here to download or install css-get to add your css libraries to your project via the command line.
+  
+%ul
+  - @scripts.each do |s|
+    %li.grid_1
+      %a{:href => s[:src_url] }= s[:name]
+      
+.clear
+

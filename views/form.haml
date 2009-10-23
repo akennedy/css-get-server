@@ -1,0 +1,12 @@
+%h1 New CSS Library
+
+%form{ :action => "/scripts", :method => "POST" }
+  %ul
+    - ["name", "description", "author", "src_url", "min_url"].each do |e|
+      %li
+        %label= e.camelize
+        %br
+        %input{ :type => "text", :name => e }
+        
+    %li
+      %input{ :type => "submit"}
