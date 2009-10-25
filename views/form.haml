@@ -1,12 +1,15 @@
-%h1 New CSS Library
+%h1= @script ? "Edit CSS Stylesheet" : "New CSS Stylesheet"
 
-%form{ :action => "/scripts", :method => "POST" }
+%form{ :action => @script ? "/scripts/:id".gsub(/:id/, @script[:name]) : "/scripts", :method => "POST" }
   %ul
     - ["name", "description", "author", "src_url", "min_url"].each do |e|
       %li
         %label= e.camelize
         %br
-        %input{ :type => "text", :name => e }
-        
+        - if e == "description"
+          %textarea{ :name => e }= @script ? @script[:description] : ""
+        - else
+          %input{ :type => "text", :class => "text", :name => e, :value => @script ? @script[e.to_sym] : "" }
     %li
-      %input{ :type => "submit"}
+      %p{:style => "border:0;text-align:left;"}
+        %input{ :type => "submit"}

@@ -1,0 +1,16 @@
+%h1 Login to CSSGet Server
+
+%p In order to add stylesheets to CSSGet Server, you just need to authenticate with a valid OpenId key.  This will only give you the right to manage the stylesheet on css-get and prevent others from over-riding your stylesheet.
+
+
+%form{:method => "post", :action => '/login'}
+  %fieldset
+    %legend Login Via OpenId
+    %ul
+      %li
+        %label{:for => "openid_identifier"} OpenId
+        %br
+        %input{:id => "openid_identifier", :name => "openid_identifier", :type => "text", :class => "text"}
+      %li
+        %p.buttons
+          %input{:type => "submit", :value => "Log In"}
